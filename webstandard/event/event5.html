@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul,li {margin:0px;padding: 0px; list-style: none;}
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <fieldset>
+            <legend>취미</legend>
+            <div class="select--all">
+                <input type="checkbox" name="" id="allChk"><span>전체선택</span>
+            </div>
+            <ul class="hobby">
+                <li class="hobby__item">
+                    <input type="checkbox" name="" id=""><span>취미1</span>
+                </li>
+                <li class="hobby__item">
+                    <input type="checkbox" name="" id=""><span>취미2</span>
+                </li>
+                <li class="hobby__item">
+                    <input type="checkbox" name="" id=""><span>취미3</span>
+            </ul>
+        </fieldset>
+    </div>
+
+    <script>
+        const selectAll = e => {
+            console.log(e.target)
+            const $hobbyies = document.querySelectorAll('.hobby .hobby__item input[type=checkbox]');
+            //case1)
+            // for(let $hobby of $hobbyies){
+                // if(e.target.checked){
+                //     $hobby.checked = true;
+                // }else{
+                //     $hobby.checked = false;
+                // }
+                // $hobbye.checked = e.target.checked ? true : false;
+            // } 
+            //case2)
+            // $hobbyies.forEach( function($hobby){
+            //     $hobby.cheked = e.target.checked ? true : false;
+            // });
+            //case3)
+            $hobbyies.forEach($hobby => $hobby.checked = e.target.checked ? true : false);
+        }
+       
+        document.querySelector('#allChk').addEventListener('click',selectAll);
+    </script>
+</body>
+
+</html>

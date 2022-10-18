@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+ul,li {margin: 0; padding: 0; list-style-type: none;}
+a {text-decoration: none;}
+
+#wrapper {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+
+/*최상위메뉴*/
+#wrapper .topmenu {display: flex; justify-content: center; align-items: center; width: 100%; height: 50px; font-size: 0.8rem; font-weight: bold; background-color: black; color: white; text-align: center;}
+#wrapper .topmenu div {width: 600px; text-align: end;}
+
+/*헤더*/
+#wrapper .header {width: 600px; height: 150px;}
+#wrapper .header img {width: 100%; height: 100%;}
+
+/*메인메뉴*/
+#wrapper .nav {width: 600px; height: 50px; background-color: black;}
+#wrapper ul { display: flex; justify-content: space-evenly; align-items: center; line-height: 50px;}
+#wrapper .nav a { font-size: 0.8rem; font-weight: bold; color: white;}
+#wrapper .nav a:hover {text-decoration: underline;}
+
+/*메인*/
+#wrapper .main {width: 600px; height: 600px; display: flex; }
+#wrapper .main .aside {width: 20%; background-color: lightskyblue;}
+#wrapper .main .section {display: flex; flex-flow: column; justify-content: center; align-items: center; width: 80%; background-color: lightcyan;}
+
+/*회원가입 양식*/
+#wrapper .main .section h3 {text-align: center; letter-spacing: 0.5em; margin: 10px;}
+#wrapper .main .section .join {width: 250px; height: 500px; padding: 10px; background-color: white; display: flex; flex-flow: column; justify-content: space-evenly;}
+#wrapper .main .section .join > label {text-align: start; font-weight: bold;}
+#wrapper .main .section .join input {margin: 0.3px;}
+#wrapper .main .section .join select {width: 80px;}
+#wrapper .main .section .join .gender__contents {display: flex; align-items: center;}
+#wrapper .main .section .join .hoddy__contents {display: flex; align-items: center;}
+#wrapper .main .section .join button {background-color: green; color: white; font-weight: bold; padding: 5px; border: 0;}
+
+/*푸터*/
+#wrapper .footer {width: 600px; height: 70px; display: flex; justify-content: center; align-items: center; background-color: gray;}
+#wrapper .footer p {font-size: 0.8rem; font-weight: bold; color: white;}
+

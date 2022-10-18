@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {outline: 1px solid red;}
+        ul,li {margin: 0; padding: 0; list-style: none;}
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #container .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container .product .product__item {
+            flex-basis: 200px;
+            flex-shrink: 0;
+            position: relative;
+        }
+        #container .product .product__item img{
+            width: 100%;
+            height: 300px;
+        }
+        
+        #container .product .product__item .profile .profile__contents {
+            position: absolute; /*부모요소 중에 static이 아닌 요소를 기준잡는다*/
+            bottom: 0;
+            left: 0;
+        }
+        #container .product .product__item .profile .profile__contents p {
+            max-height: 0;
+            opacity: 0;
+            transition: all 1s;
+            color: white;
+        }
+        #container .product .product__item:hover .profile .profile__contents p {
+            max-height: 100px;
+            opacity: 0.8;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul class="product">
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/02/10/caffeine-1866758__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>Lorem, ipsum.</h2>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam ex nostrum consequatur accusamus sunt nobis repellat molestias quia nihil ipsam voluptas, provident molestiae sapiente unde dolor exercitationem obcaecati, optio sint.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/30/16/01/football-2697624__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>Lorem, ipsum.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente quidem excepturi, iusto deleniti nisi impedit ipsa, ullam nostrum molestias blanditiis laborum, est soluta. Nemo rem, doloribus ipsam earum quos perferendis!</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile">
+                    <img src="https://cdn.pixabay.com/photo/2018/03/16/12/03/football-3231041__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h2>Lorem, ipsum.</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nemo fuga deserunt, atque illo harum dolorem nisi molestiae consequatur neque, sit dignissimos repellat nobis ipsa! Nemo molestias repellat voluptates vel.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

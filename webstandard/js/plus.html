@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {display: inline-block; word-spacing: 150px;}
+        button {background: orange; color: black; border: none; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <p>난수1 난수2 답</p><br>
+    <input id="number1" class="input" type="text"> +
+    <input id="number2" class="input" type="text"> =
+    <input id="answer"  class="input" type="text">
+    
+    <button class="result">결과확인</button>
+    <button class="again">다시풀기</button>
+
+    <script>
+        const $number1 = document.querySelector('#number1');
+        const $number2 = document.querySelector('#number2');
+        
+        $number1.value = Math.floor(Math.random()*(999-100)+100);
+        $number2.value = Math.floor(Math.random()*(999-100)+100);
+
+        const $answer = document.querySelector('#answer');
+
+        const $result = document.querySelector('.result');
+
+        function inputColor(){
+            if 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input.bg_green {
+            background-color: green;
+        }
+        input.bg_red {
+            background-color: red;
+        }
+        div {display: flex;}
+        .choice {display: flex; width: 80%; justify-content: center; align-items: center;}
+        .choice input {
+            flex: 1;
+            text-align: center;
+        }
+        .inputBox {
+            display: flex;
+            width: 80%;
+            justify-content: center;
+        }
+        .inputBox input {
+            width: 40px;
+            margin: 0 10px;
+            text-align: center;
+        }
+        .inputBox #cal {
+            width: 20px;
+            text-align: center;
+        }
+        .inputBox #userInput {
+            width: 50px;
+            text-align: center;
+        }
+        button {background: orange; color: black; border: none; font-weight: bold;}
+        
+    </style>
+</head>
+<body>
+    <div class="choice">
+        <p>사칙연산 선택</p>
+        <section>
+            <input type="radio" name="cal" id="plus"><label for="plus">덧셈</label>
+            <input type="radio" name="cal" id="minus"><label for="minus">뺄셈</label>
+            <input type="radio" name="cal" id="mp"><label for="mp">곱셈</label>
+            <input type="radio" name="cal" id="dv"><label for="dv">나눗셈</label>
+        </section>
+    </div>
+    <div class="inputBox">
+        <input id="val1" type="text">
+        <input id="cal" type="text">
+        <input id="val2" type="text">=<input id="userInput" type="text">
+        <button id="btnResult">결과확인</button><button id="btnRestart">다시풀기</button>
+    </div>
+
+    <div id="msg"></div>
+
+    <script>
+        //1) 2개 랜덤값 발생
+        const randomValue1 = Math.floor(Math.random()*1000)+1;
+        const randomValue2 = Math.floor(Math.random()*1000)+1;
+
+        //2) input 요소에 랜덤값 반영
+        const $val1 = document.getElementById('val1');
+        const $val2 = document.getElementById('val2');
+
+        $val1.value = randomValue1;
+        $val2.value = randomValue2;
+        let choice = '?';
+
+        //사칙연산 선택
+        const $cal = document.getElementById('cal');
+
+        //덧셈 선택
+        const $plus = document.getElementById('plus');
+        $plus.addEventListener("click", radioPlus_f);
+
+        function radioPlus_f(evt) {
+            choice = '+';
+            $cal.value = choice;
+            result_f
+        }
+
+        //뺄셈 선택
+        const $minus = document.getElementById('minus');
+        $minus.addEventListener("click", radioMinus_f);
+        
+        function radioMinus_f(evt) {
+            choice = '-';
+            $cal.value = choice;
+            result_f
+        }
+        
+        //곱셈 선택
+        const $mp = document.getElementById('mp');
+        $mp.addEventListener("click", radioMultiply_f);
+        
+        function radioMultiply_f(evt) {
+            choice = '*';
+            $cal.value = choice;
+            result_f
+        }
+        
+        //나눗셈 선택
+        const $dv = document.getElementById('dv');
+        $dv.addEventListener("click", radioDivision_f);
+        
+        function radioDivision_f(evt) {
+            choice = '/';
+            $cal.value = choice;
+            result_f
+        }
+
+        //3) 결과확인버튼 클릭
+        const $userInput = document.getElementById('userInput');
+        const $btnResult = document.getElementById('btnResult');
+        $btnResult.addEventListener('click',result_f);
+
+         // 답 입력했는지 확인 (null check)
+        function result_f(evt){
+            const plusResultOfComputer = parseInt($val1.value) + parseInt($val2.value);
+            const minusResultOfComputer = parseInt($val1.value) - parseInt($val2.value);
+            const mupResultOfComputer = parseInt($val1.value) * parseInt($val2.value);
+            const dvResultOfComputer = Math.round((parseInt($val1.value) / parseInt($val2.value))*100)/100;
+            console.log(plusResultOfComputer);
+            console.log(minusResultOfComputer);
+            console.log(mupResultOfComputer);
+            console.log(dvResultOfComputer);
+            
+            if($userInput.value == '') {
+                alert('답을 입력하세요');
+            } else {
+                isRight();
+            }
+        }
+        // 덧셈, 뺄셈, 곱셈, 나눗셈 계산
+        function isRight(evt) {
+            const plusResultOfComputer = parseInt($val1.value) + parseInt($val2.value);
+            const minusResultOfComputer = parseInt($val1.value) - parseInt($val2.value);
+            const mupResultOfComputer = parseInt($val1.value) * parseInt($val2.value);
+            const dvResultOfComputer = Math.round((parseInt($val1.value) / parseInt($val2.value))*100)/100;
+            
+            switch(choice){
+                case '+':
+                    if(plusResultOfComputer == $userInput.value){
+                        $userInput.style.backgroundColor = 'green';
+                    } else {
+                        $userInput.style.backgroundColor = 'red';
+                    }
+                    break;
+
+                case '-':
+                        if(minusResultOfComputer == $userInput.value){
+                            $userInput.style.backgroundColor = 'green';
+                    } else {
+                        $userInput.style.backgroundColor = 'red';
+                    }
+                    break;
+                    
+                case '*':
+                        if(mupResultOfComputer == $userInput.value){
+                            $userInput.style.backgroundColor = 'green';
+                        } else {
+                            $userInput.style.backgroundColor = 'red';
+                    }
+                    break;
+
+                case '/':
+                    if(dvResultOfComputer == $userInput.value){
+                        $userInput.style.backgroundColor = 'green';
+                    } else {
+                        $userInput.style.backgroundColor = 'red';
+                    }
+                    break;
+            }
+        }
+
+
+        //4) 다시풀기버튼 클릭
+        const $btnRestart = document.getElementById('btnRestart');
+        $btnRestart.addEventListener('click',restart_f);
+
+        function restart_f(evt){
+            $val1.value = Math.floor(Math.random()*1000)+1;
+            $val2.value = Math.floor(Math.random()*1000)+1;
+            choice = '?';
+            $userInput.value = null;
+            $userInput.style.backgroundColor = 'white';
+        }
+
+        
+    </script>
+</body>
+</html>

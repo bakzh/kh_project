@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면구현</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="topmenu">
+            <div>
+                <p>로그인 | 회원가입</p>
+            </div>
+        </div>
+        <header class="header">
+            <img src="https://cdn.pixabay.com/photo/2022/05/31/18/12/flowers-7233987__340.jpg" alt="">
+        </header>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">웹표준</a></li>
+                <li><a href="#">자바</a></li>
+                <li><a href="#">안드로이드</a></li>
+                <li><a href="#">데이터베이스</a></li>
+                <li><a href="#">스프링</a></li>
+            </ul>
+        </nav>
+        <main class="main">
+            <aside class="aside"></aside>
+            <section class="section">
+                <h3>회원가입</h3>
+                <div class="join">
+                    <label for="id">아이디</label>
+                    <input id="id" type="text">
+                    
+                    <label for="pw">비밀번호</label>
+                    <input id="pw" type="password">
+                    
+                    <label for="pwCh">비밀번호확인</label>
+                    <input id="pwCh" type="password">
+                    
+                    <label for="phoneNb">전화번호</label>
+                    <input id="phoneNb" type="tel">
+                    
+                    <label for="nickName">별칭</label>
+                    <input id="nickName" type="text">
+                    
+                    <label for="location">지역</label>
+                    <select name="location" id="location">
+                        <option value="">==선택==</option>
+                        <option value="">서울</option>
+                        <option value="">부산</option>
+                        <option value="">대구</option>
+                        <option value="">대전</option>
+                        <option value="">울산</option>
+                    </select>
+                    
+                    <label for="gender">성별</label>
+                    <div class="gender__contents">
+                        <input type="radio" name="gender" id="male">
+                        <label for="male">남자</label>
+                        <input type="radio" name="gender" id="female">
+                        <label for="female">여자</label>
+                    </div>
+                    
+                    <label for="hobby">취미</label>
+                    <div class="hoddy__contents">
+                        <input type="checkbox" name="" id="book">
+                        <label for="book">독서</label>
+                        <input type="checkbox" name="" id="music">
+                        <label for="music">음악감상</label>
+                        <input type="checkbox" name="" id="pe">
+                        <label for="pe">운동</label>
+                        <input type="checkbox" name="" id="game">
+                        <label for="game">게임</label>
+                    </div>
+
+                    <label for="date">생년월일</label>
+                    <input type="date" name="" id="date">
+                    
+                    <button>회원가입</button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>Cpyright by Gildong Hong.All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

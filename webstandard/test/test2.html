@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {outline: 1px solid red;} */
+        body {margin: 0; padding: 0;}
+        ul,li,p {margin: 0; padding: 0; list-style: none;}
+        ul,li {list-style: none;}
+        body {
+            background-color: #111;
+            color: #999;
+        }
+
+        #container {
+            height: 100vh;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        #container .product {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container .product .product__item {
+            flex-basis: 150px;
+            flex-shrink: 0; /*뷰포트가 줄때 item폭 줄임 방지*/
+            margin: 0 5px;
+            position: relative;
+            transition: all .4s;
+            opacity: 0.6;
+        }
+
+        #container .product .product__item:hover {
+            flex-basis: 200px;
+            margin: 0 20px;
+            opacity: 1;
+        }
+
+        #container .product .product__item:hover .profile.profile--pink {
+            color: pink;
+        }
+        #container .product .product__item:hover .profile.profile--green {
+            color: green
+        }
+        #container .product .product__item:hover .profile.profile--purple {
+            color: purple
+        }
+
+        #container .product .product__item:hover .profile .profile__contents {
+            max-height: 150px;
+        }
+
+        #container .product .product__item .profile {
+            position: relative;
+            font-weight: 900;
+        }
+
+        #container .product .product__item .profile img {
+            width: 100%;
+        }
+
+        #container .product .product__item .profile .profile__contents {
+            position: absolute;
+            bottom: 0; left: 0;
+            padding: 10px;
+        }
+
+        #container .product .product__item .profile .profile__contents:hover {
+            content: '';
+            display: block; 
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+            position:absolute;
+            left:0;
+            right:0;
+            bottom: 0;
+            top:0;
+            opacity: 0.3;
+        }
+
+        #container .product .product__item .profile .profile__contents h3 {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        #container .product .product__item .profile .profile__contents h3 span {
+            display: block;
+            font-size: 0.9em;
+        }
+        #container .product .product__item .profile .profile__contents h3 span::before {
+            content: attr(title);
+            padding-right:5px;
+        }
+        #container .product .product__item .profile .profile__contents h3 span::after {
+            content: attr(data-unit);
+        }
+
+        #container .product .product__item .profile .profile__contents p {
+            font-size: 12px;
+            color: #eee;
+            max-height: 0;
+            max-width: 200px;
+            transition: all 1s;
+            line-height: 1.2;
+            opacity: 0;
+        }
+        #container .product .product__item:hover .profile .profile__contents p {
+            max-height: 150px;
+            transition-delay: 0.4s;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul class="product">
+            <li class="product__item">
+                <div class="profile profile--pink">
+                    <img src="https://cdn.pixabay.com/photo/2017/01/21/14/08/ronaldo-1997300__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h3>호날두<span title="가격" data-unit="원">1300억</span></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quae provident ea necessitatibus adipisci omnis vero voluptates, reiciendis harum! Eaque corrupti voluptatibus maxime accusantium nemo. Id nihil provident ipsa praesentium.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile profile--green">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/30/16/01/football-2697624__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h3>레알<span title="가격" data-unit="원">5조 3300억</span></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quae provident ea necessitatibus adipisci omnis vero voluptates, reiciendis harum! Eaque corrupti voluptatibus maxime accusantium nemo. Id nihil provident ipsa praesentium.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="product__item">
+                <div class="profile profile--purple">
+                    <img src="https://cdn.pixabay.com/photo/2018/03/26/19/49/food-3263812__340.jpg" alt="">
+                    <div class="profile__contents">
+                        <h3>레전드<span title="가격" data-unit="원">1조</span></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi quae provident ea necessitatibus adipisci omnis vero voluptates, reiciendis harum! Eaque corrupti voluptatibus maxime accusantium nemo. Id nihil provident ipsa praesentium.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

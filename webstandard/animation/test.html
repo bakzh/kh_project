@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            position: relative;
+            background: rgb(2,0,36);
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            height: 100vh;
+        }
+        #box {
+            position: absolute;
+            top: 0px;
+            left: 100px;
+
+            width: 200px;
+            height: 200px;
+
+            background: linear-gradient(to left, violet, #a90329);
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 9px 4px 12px 0px #9e9e9e;
+
+            animation-name: rotation;
+            animation-duration: 2s; 
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#7d7e7d+0,0e0e0e+100;Black+3D */
+            background: #7d7e7d; /* Old browsers */
+            background: -moz-linear-gradient(left,  #7d7e7d 0%, #0e0e0e 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left,  #7d7e7d 0%,#0e0e0e 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right,  #7d7e7d 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 ); /* IE6-9 */
+
+        }
+        #box:hover {    
+            animation-play-state: paused;
+        }
+        #box h1 {
+            line-height: 200px;
+        }
+
+        @keyframes rotation {
+            0% {
+                top: 0px;
+                left: 100px;
+                transform: rotate(0deg);
+            }
+            50% {
+                top: 400px;
+                left: 800px;
+                transform: rotateY(180deg);
+            }
+            100% {
+                top: 400px;
+                left: 400px;
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h1>Rotation</h1>
+    </div>    
+</body>
+</html>
