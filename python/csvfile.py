@@ -8,4 +8,4 @@ with open('member.csv','r',encoding='cp949') as csvfile :
 
 with open('member2.csv','w',encoding='cp949') as csvfile :
     lines2 = csv.writer(csvfile)
-    lines2.writerows(lines)
+    lines2.writerows(lines2)
